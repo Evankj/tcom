@@ -1,4 +1,5 @@
-import { createHonoRouter, createImplementation, createSchema } from "../../src/tcom";
+import { createImplementation, createSchema, typedInterfaceComponents } from "../../src/tcom";
+import { HonoHTTPTransport } from '../../src/transport/hono-http'
 import { z } from 'zod';
 
 export const schema = createSchema({
@@ -17,6 +18,6 @@ const app = createImplementation(schema, {
   }
 });
 
-const router = createHonoRouter(schema, app);
+const server = new HonoHTTPTransport(typedInterfaceComponents(schema, app), "Test API");
 
-export default router;
+export default server.listen(3000);
