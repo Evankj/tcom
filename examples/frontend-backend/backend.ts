@@ -1,4 +1,4 @@
-import { createHonoRouter, createImplementation, createSchema } from "./tcom";
+import { createHonoRouter, createImplementation, createSchema } from "../../src/tcom";
 import { z } from 'zod';
 
 export const schema = createSchema({

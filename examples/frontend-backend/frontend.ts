@@ -1,5 +1,5 @@
 import { schema } from './backend'
-import { getClient } from './tcom'
+import { getClient } from '../../src/tcom'
 
 const client = getClient({
   schema,
